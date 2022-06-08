@@ -7,40 +7,50 @@
   background-color: #FFDE00 !important;
 }
 #container {
+  padding: 0;
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: #FFDE00 !important;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  background-image: url("../../assets/img/Artboard-1.png"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.logo{
+  width: 60%;
+  height: 30vh;
+  position: absolute;
+  top: 0px;
+  left: 20px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.img-mulher{
+  object-fit: fill;
+  width: 100% !important;
+  height: 42vh !important;
+  position: absolute;
+  bottom: calc( 20vh + 140px);
+  left: -50px;
+  margin-right: 10px;
 }
 
-#container a {
-  text-decoration: none;
+#player {
+  position: absolute;
+  bottom: 35vh;
 }
 
 .card-center {
   position: absolute;
-  bottom: 30vh;
+  bottom: 25vh;
 }
 
 .card-center h2 {

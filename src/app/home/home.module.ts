@@ -1,8 +1,8 @@
+import { NativeAudio } from '@awesome-cordova-plugins/native-audio/ngx';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { NativeAudio } from '@awesome-cordova-plugins/native-audio/ngx';
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 
@@ -15,9 +15,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     HomePageRoutingModule,
   ],
   declarations: [HomePage],
-  providers: [NativeAudio],
+  providers: [NativeAudio]
+  
 })
 export class HomePageModule {
-
-
+  
  }
