@@ -1,0 +1,6 @@
+{
+	"appId": "br.com.top100fm",
+	"appName": "Top100FM",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
