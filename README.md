@@ -35,13 +35,6 @@ npm install
 ionic serve
 ```
 
-##### Instalando resources do cordova para o capacitor:
-
-```bash
-npm install -g cordova-res
-```
-
-##
 
 <h3 align="left">📦 Instalação do app android do projeto </h3>
 
@@ -104,3 +97,8 @@ ionic doctor check
 ```bash
 ionic doctor treat
 ```
+
+### Depois de gerar os resources no ionic abra o android studio e click com o botão direito no diretorio res -> new -> image asset
+
+### Para assinar o Apk va em Build -> Generaate Signed Bundle or APK
+

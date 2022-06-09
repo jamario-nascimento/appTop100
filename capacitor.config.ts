@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'myApp',
+  appId: 'br.com.top100fm',
+  appName: 'Top100FM',
   webDir: 'www',
   bundledWebRuntime: false,
 };

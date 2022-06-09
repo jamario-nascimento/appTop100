@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package br.com.top100fm;
 
 import com.getcapacitor.BridgeActivity;
 
