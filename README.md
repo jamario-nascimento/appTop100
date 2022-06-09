@@ -102,3 +102,8 @@ ionic doctor treat
 
 ### Para assinar o Apk va em Build -> Generaate Signed Bundle or APK
 
+### Capacitor for iOS
+
+```bash
+npm install @capacitor/cli @capacitor/core
+```
