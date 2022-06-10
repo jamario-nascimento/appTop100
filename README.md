@@ -105,5 +105,62 @@ ionic doctor treat
 ### Capacitor for iOS
 
 ```bash
+https://ionicframework.com/docs/developing/ios
+```
+
+```bash
 npm install @capacitor/cli @capacitor/core
+```
+### Para o simulador xCode
+
+```bash
+sudo npm install -g ios-sim
+brew install ios-deploy
+```
+
+### Adicionando capacitor ios
+
+```bash
+ionic capacitor add ios
+```
+
+### Abrir projeto no xcode
+
+```bash
+ionic capacitor open ios
+```
+### Gerando resources instalar no ios, depois gera oresources se prescisas, no final copie para o projeto ios
+
+```bash
+ npm i -g cordova-res
+```
+
+```bash
+cordova-res
+```
+
+```bash
+cordova-res ios --skip-config --copy
+```
+
+### Copia alterações do projeto para a pasta ios
+
+```bash
+ionic capacitor copy ios
+```
+
+### Provavelmente vai ter um erro no projeto do xcode esse comando instala um dependencia nescessario para resolver o problema do pod e das dependencias do capacitor
+
+```bash
+sudo arch -x86_64 gem install ffi
+```
+### Depois você prescisa adicionar a configuração das dependencias Entre no diretorio que foi gerado no seu projeto Ionic ios/App e rode esse comando
+
+```bash
+arch -x86_64 pod install
+```
+### Finalmente pode buildar o projeto
+
+```bash
+ionic capacitor build ios
 ```
