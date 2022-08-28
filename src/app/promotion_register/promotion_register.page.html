@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar id="app-bar">
+    <ion-title class="uppercase" style="text-align: center; color: white;">Promoção Ta na top</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" style="color: white;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body has-header" [fullscreen]="true">
+  <div id="container">
+    <div class="form">
+
+      <p class="label uppercase">Nome Completo *</p>
+      <ion-input class="uppercase" placeholder="Nome Completo"></ion-input>
+      <p class="label uppercase">telefone *</p>
+      <ion-input class="uppercase" placeholder="(00) 9 0000 0000"></ion-input>
+      <p class="label uppercase">CPF *</p>
+      <ion-input class="uppercase" placeholder="000.000.000-00"></ion-input>
+      <p class="label uppercase">data de nascimento *</p>
+      <ion-input class="uppercase" placeholder="00/00/0000"></ion-input>
+
+      <div class="checkbox">
+        <ion-checkbox></ion-checkbox><span class="label">Aceito os termos</span>
+      </div>
+
+      <div class="button uppercase">
+        Cadastrar
+      </div>
+
+    </div>
+  </div>
+</ion-content>
+
+
+
+<ion-footer class="ion-no-border">
+  <div class="footer">
+    <div class="icon-home"></div>
+    <div class="spacer"></div>
+    <div class="icon-radio"></div>
+    <div class="spacer"></div>
+    <div class="icon-gift icon-active"></div>
+  </div>
+</ion-footer>
