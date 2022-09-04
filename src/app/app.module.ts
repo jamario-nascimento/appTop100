@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 // Import the AngularFire Module
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAkHAMNGPb2-tTPe36wVviLWB0xLTMER8w",
@@ -30,9 +31,9 @@ const firebaseConfig = {
     IonicModule.forRoot(),
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideFirestore(() => getFirestore()),        
+    provideFirestore(() => getFirestore()),            
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy, }],
   bootstrap: [AppComponent],  
 })
 export class AppModule { }

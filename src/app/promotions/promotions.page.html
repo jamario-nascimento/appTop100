@@ -22,7 +22,7 @@
             <div class="promotion-description">
               <div class="promotion-description-title">{{ item.title }}</div>
               <div class="promotion-description-text">{{ item.descriptionShort }}</div>
-              <div class="promotion-description-button" [routerLink]="['/promotions/register/', item.id]">Participar</div>
+              <div class="promotion-description-button" [routerLink]="['/promotions/register/', item.id]"  [state]="item">Participar</div>
             </div>
           </div>
         </div>

@@ -9,8 +9,10 @@ import { Observable } from 'rxjs';
 interface Promotion {
   id: string,
   title: string,
+  description: string,
   descriptionShort: string,
   imageUrl: string,
+  endDate: Date,
 };
 
 const promotionConverter = {
@@ -29,9 +31,11 @@ const promotionConverter = {
     const id = snapshot.id;
     let promotion: Promotion = {
       id: id,
+      description: data.description,
       title: data.title,
       descriptionShort: data.descriptionShort,
       imageUrl: data.imageUrl,
+      endDate: data.endDate.toDate(),
     }
     return promotion;
   }
