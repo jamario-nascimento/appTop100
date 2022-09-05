@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {
   Firestore, collectionData, collection,
   DocumentData, QueryDocumentSnapshot, SnapshotOptions,
+  Timestamp
 } from '@angular/fire/firestore';
 import { addDoc } from 'firebase/firestore';
 
@@ -25,6 +26,9 @@ export class PromotionRegisterPage implements OnInit {
 
   promotion: Promotion;
   formGroup: FormGroup;
+  phoneMask = '(00) 0 0000-0000';
+  cpfMask = '000.000.000-00';
+  birthDateMask = '00/00/0000';
 
   constructor(private formBuilder: FormBuilder, private firestore: Firestore) { }
 
@@ -33,6 +37,7 @@ export class PromotionRegisterPage implements OnInit {
 
     this.formGroup = this.formBuilder.group({
       name: ['', [Validators.required,]],
+      email: ['', [Validators.required, Validators.email]],
       cellphone: ['', [Validators.required,]],
       cpf: ['', [Validators.required,]],
       birthDate: ['', [Validators.required,]],
@@ -41,12 +46,28 @@ export class PromotionRegisterPage implements OnInit {
   }
 
   submit() {
-    console.log(this.formGroup.value);
     if (this.formGroup.valid && this.formGroup.value.accepted === true) {
-      let promotions = collection(this.firestore, 'subscriptions');
-      addDoc(promotions, { ...this.formGroup.value, promotion: this.promotion, });
-      console.log("salvo");
+      let subscriptions = collection(this.firestore, 'subscriptions');
+
+      const values = {
+        ...this.formGroup.value,
+        birthDate: Timestamp.fromDate(this.brStringToDate(this.formGroup.value.birthDate)),
+      };
+
+
+      addDoc(subscriptions, { ...values, promotion: this.promotion, });
     }
+  }
+
+  brStringToDate(brDateString: string): Date {
+
+    var dateParts = brDateString.split("/");
+    const day = parseInt(brDateString.substring(0, 2));    
+    const month = parseInt(brDateString.substring(2, 4)) - 1;
+    const year = parseInt(brDateString.substring(4, 8));
+
+    return new Date(year, month, day);
+
   }
 
 }

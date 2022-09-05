@@ -249,9 +249,12 @@ ion-title {
   text-align: center;
   margin-top: 79px;
   padding: 23px 99px;
+  border: none;
+
 }
 
-ion-input {
+input[type=text],
+input[type=email] {
   background-color: white;
   border: 1px solid #F5F5F5;
   border-radius: 5px;
@@ -263,6 +266,10 @@ ion-input {
   line-height: 19px;
 
   color: #707070;
+
+  height: 61px;
+  width: 100%;
+  padding-left: 10px;
 }
 
 .uppercase {
@@ -271,7 +278,7 @@ ion-input {
 
 ion-title {
   color: white;
-  
+
 }
 
 .footer {
@@ -289,20 +296,20 @@ ion-title {
   background-color: white;
 }
 
-.rules{
+.rules {
   padding: 46px 0 0 33px;
 }
 
-.rules > .title{
+.rules>.title {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
-  line-height: 27px;  
+  line-height: 27px;
   color: #0024B1;
 }
 
-.rules > .text{
+.rules>.text {
   padding-top: 46px;
   padding-right: 40px;
   font-family: 'Inter';
@@ -314,6 +321,15 @@ ion-title {
   width: 371px;
 }
 
-.rules > .endDate{
+.rules>.endDate {
   padding-top: 36px;
+}
+
+.form-field-error {
+  
+  color: red;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;  
 }

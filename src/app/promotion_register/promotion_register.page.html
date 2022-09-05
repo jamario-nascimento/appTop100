@@ -17,26 +17,38 @@
         {{promotion.description}}
       </div>
       <div class="endDate">Data limite: {{promotion.endDate | date: 'dd/MM/yyyy'}}</div>
-    </div>
-
+    </div>    
     <form [formGroup]="formGroup" (ngSubmit)="submit()">
       <div class="form">
-        <p class="label uppercase">Nome Completo *</p>
-        <ion-input class="uppercase" placeholder="Nome Completo" formControlName="name"></ion-input>
+        <p class="label uppercase">Nome Completo *</p>        
+        <input type="text" class="uppercase" placeholder="Nome Completo" formControlName="name" required />
+        <ng-container *ngIf="formGroup.controls.name.touched">
+          <small class="form-field-error" *ngIf="formGroup.controls.name.hasError('required')">
+            Nome é obrigatorio!
+          </small>
+        </ng-container>
+        <p class="label uppercase">Email *</p>
+        <input type="email" class="uppercase" placeholder="email@email.com" formControlName="email"/>
+        <ng-container *ngIf="formGroup.controls.email.touched">
+          <small class="form-field-error" *ngIf="formGroup.controls.email.hasError('required')">
+            Email é obrigatorio!
+          </small>
+          <small class="form-field-error" *ngIf="formGroup.controls.email.hasError('email')">
+            Deve ser um email valido!
+          </small>
+        </ng-container>
         <p class="label uppercase">telefone *</p>
-        <ion-input class="uppercase" placeholder="(00) 9 0000 0000" formControlName="cellphone"></ion-input>
+        <input type="text" class="uppercase" placeholder="(00) 9 0000 0000"  [mask]="phoneMask" formControlName="cellphone" />
         <p class="label uppercase">CPF *</p>
-        <ion-input class="uppercase" placeholder="000.000.000-00" formControlName="cpf"></ion-input>
+        <input type="text" class="uppercase" placeholder="000.000.000-00" [mask]="cpfMask" formControlName="cpf" />
         <p class="label uppercase">data de nascimento *</p>
-        <ion-input class="uppercase" placeholder="00/00/0000" formControlName="birthDate"></ion-input>
+        <input type="text" class="uppercase" placeholder="00/00/0000" [mask]="birthDateMask" formControlName="birthDate" />
 
         <div class="checkbox">
-          <ion-checkbox formControlName="accepted"></ion-checkbox><span class="label">Aceito os termos</span>
+          <input type="checkbox" formControlName="accepted" /><span class="label">Aceito os termos</span>
         </div>
 
-        <div class="button uppercase">
-          <input type="submit" value="Cadastrar" />
-        </div>
+        <input class="button uppercase" type="submit" value="Cadastrar" />        
 
       </div>
     </form>
