@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar id="app-bar">
+    <ion-title class="uppercase" style="text-align: center; color: white;">{{promotion.title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" style="color: white;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body has-header" [fullscreen]="true">
+  <div id="container">
+    <img src="../../assets/img/promotion_banner.jpg" />
+
+    <div class="rules">
+      <div class="title uppercase">Regulamento</div>
+      <div class="text">
+        {{promotion.description}}
+      </div>
+      <div class="endDate">Data limite: {{promotion.endDate | date: 'dd/MM/yyyy'}}</div>
+    </div>    
+    <form [formGroup]="formGroup" (ngSubmit)="submit()">
+      <div class="form">
+        <p class="label uppercase">Nome Completo *</p>        
+        <input type="text" class="uppercase" placeholder="Nome Completo" formControlName="name" required />
+        <ng-container *ngIf="formGroup.controls.name.touched">
+          <small class="form-field-error" *ngIf="formGroup.controls.name.hasError('required')">
+            Nome é obrigatorio!
+          </small>
+        </ng-container>
+        <p class="label uppercase">Email *</p>
+        <input type="email" class="uppercase" placeholder="email@email.com" formControlName="email"/>
+        <ng-container *ngIf="formGroup.controls.email.touched">
+          <small class="form-field-error" *ngIf="formGroup.controls.email.hasError('required')">
+            Email é obrigatorio!
+          </small>
+          <small class="form-field-error" *ngIf="formGroup.controls.email.hasError('email')">
+            Deve ser um email valido!
+          </small>
+        </ng-container>
+        <p class="label uppercase">telefone *</p>
+        <input type="text" class="uppercase" placeholder="(00) 9 0000 0000"  [mask]="phoneMask" formControlName="cellphone" />
+        <p class="label uppercase">CPF *</p>
+        <input type="text" class="uppercase" placeholder="000.000.000-00" [mask]="cpfMask" formControlName="cpf" />
+        <p class="label uppercase">data de nascimento *</p>
+        <input type="text" class="uppercase" placeholder="00/00/0000" [mask]="birthDateMask" formControlName="birthDate" />
+
+        <div class="checkbox">
+          <input type="checkbox" formControlName="accepted" /><span class="label">Aceito os termos</span>
+        </div>
+
+        <input class="button uppercase" type="submit" value="Cadastrar" />        
+
+      </div>
+    </form>
+  </div>
+</ion-content>
+
+
+
+<ion-footer class="ion-no-border">
+  <div class="footer">
+    <div class="icon-home"></div>
+    <div class="spacer"></div>
+    <div class="icon-radio"></div>
+    <div class="spacer"></div>
+    <div class="icon-gift icon-active"></div>
+  </div>
+</ion-footer>

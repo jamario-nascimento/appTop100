@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar id="app-bar">
+    <ion-title style="text-align: center; color: white;">PROMOÇÕES</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" style="color: white;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body" [fullscreen]="true">
+  
+
+  <div id="container">
+    
+    <div *ngIf="promotions | async; let items; else loading">
+
+        <div class="promotion-container" *ngFor="let item of items">
+          <div class="promotion-card">
+            <div class="promotion-image">
+              <img src={{item.imageUrl}} />
+            </div>
+            <div class="promotion-description">
+              <div class="promotion-description-title">{{ item.title }}</div>
+              <div class="promotion-description-text">{{ item.descriptionShort }}</div>
+              <div class="promotion-description-button" [routerLink]="['/promotions/register/', item.id]"  [state]="item">Participar</div>
+            </div>
+          </div>
+        </div>
+      
+      <div *ngIf="items.length === 0">No results, try clearing filters</div>
+    </div>
+
+    
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div class="footer">
+    <div class="icon-home"></div>
+    <div class="spacer"></div>
+    <div class="icon-radio"></div>
+    <div class="spacer"></div>
+    <div class="icon-gift icon-active"></div>
+  </div>
+</ion-footer>
