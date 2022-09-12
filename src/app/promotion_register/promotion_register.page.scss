@@ -1,3 +1,21 @@
+.container {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: calc(100% - 42px) !important;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  // top: 50%;
+  // transform: translateY(-50%);
+  background-image: url("../../assets/img/Artboard-1.png"); /* The image used */
+  background-color: #FFDE00 !important; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
 #app-bar {
   --background: #0064BA;
 }
