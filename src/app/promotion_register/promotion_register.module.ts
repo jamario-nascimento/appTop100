@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PromotionRegisterPage } from './promotion_register.page';
 import { PromotionRegisterPageRoutingModule } from './promotion_register-routing.module';
-import { ComponentsModule } from '../components/components.module';
+
 
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 
@@ -16,7 +16,6 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     FormsModule,
     IonicModule,
     PromotionRegisterPageRoutingModule,
-    ComponentsModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
   ],

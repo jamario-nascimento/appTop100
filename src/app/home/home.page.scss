@@ -1,25 +1,17 @@
-.body {
-  background-color: #FFDE00;
-  position: relative;
-}
-
-.ion-page {
-  background-color: #FFDE00 !important;
-}
-#container {
+.container {
   padding: 0;
   display: flex;
   justify-content: center;
   text-align: center;
-  height: 100%;
+  height: calc(100% - 42px) !important;
   width: 100%;
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  // top: 50%;
+  // transform: translateY(-50%);
   background-image: url("../../assets/img/Artboard-1.png"); /* The image used */
-  background-color: #cccccc; /* Used if the image is unavailable */
+  background-color: #FFDE00 !important; /* Used if the image is unavailable */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
@@ -38,75 +30,9 @@
   max-width: 517px;
   height: auto;
   position: absolute;
-  bottom: calc( 20vh + 140px);
+  bottom: calc( 20vh + 45px);
   padding: 0px 60px;
 }
-
-
-
-.card-center {
-  position: absolute;
-  bottom: 25vh;
-}
-
-.card-center h2 {
-  color: #0064BA;
-  font-size: 1.3em !important;
-  font-style: bold;
-}
-
-.card-play {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 10px;
-  padding-left: 5px;
-  width: 80vw;
-  height: 100px;
-  background-color: white;
-  border-radius: 10px;
-}
-
-.play {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 70%;
-  
-}
- .imagem {
-   width: 90px;
-   height: 90px;
- }
-
- .imagem img {
-   object-fit: cover;
-   width: 90px;
-   height: 90px;
-   border-radius: 8px;
- }
-
- .texto {
-   text-align: left;
-   padding-left: 10px;
-
- }
-
-.titulo {
-  font-size: 2em !important;
-  font-weight: 600;
-  color: #0064BA !important;
-}
-.descricao {
-  font-size: 1em !important;
-}
-
-.control-volume {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 .card-footer {
   padding: 0;
   display: flex;
@@ -120,7 +46,7 @@
   z-index: 1000;
   border-radius: 10px;
   position: fixed;
-  bottom: 7vh;
+  bottom: 21vh;
   z-index: 1000;
 }
 
@@ -149,60 +75,5 @@ ion-icon {
   text-transform: uppercase;
   font-size: .9em;
 }
-// Audio controler
-audio::-webkit-media-controls-panel {
-  background-color: #fff;
-  border-radius:5px !important;
-  padding:22px;
-}
 
-audio::-webkit-media-controls-timeline {
-  background-color: #0064BA;
-  border-radius: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
 
-audio::-webkit-media-controls-mute-button {
-  background-color:#ffde00;
-  border-radius: 50%;
-  opacity: 1;
-}
-audio::-webkit-media-controls-mute-button:hover {
-  background-color:#0064BA;
-}
-
-audio::-webkit-media-controls-play-button {
-  background-color: #ffde00;
-  border-radius: 50px;
-}
-audio::-webkit-media-controls-play-button:hover {
-  background-color: #0064BA;
-}
-
-audio::-webkit-media-controls-current-time-display {
-  color: #0064BA;
-}
-
-audio::-webkit-media-controls-volume-slider {
-  background-color: #0064BA !important;
-  border-radius: 25px;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-// audio::-webkit-media-controls-panel {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-mute-button {background-color: #0064BA; color: #FFF;}
-// audio::-webkit-media-controls-play-button {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-timeline-container {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-current-time-display {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-time-remaining-display {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-timeline {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-volume-slider-container {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-volume-slider {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-seek-back-button {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-seek-forward-button {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-fullscreen-button {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-rewind-button {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-return-to-realtime-button {background-color: red; color: #FFF;}
-// audio::-webkit-media-controls-toggle-closed-captions-button {background-color: red; color: #FFF;}

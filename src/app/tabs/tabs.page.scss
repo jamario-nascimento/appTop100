@@ -1,0 +1,44 @@
+.radio{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 9999999999999;
+    background: transparent;
+    width: 100%;
+    bottom: 42px;
+    text-align: center;
+}
+.titulo{
+    font-size: 1.6em !important;
+    font-weight: 600;
+    margin-top: -5px !important;
+    color: #0064BA !important;
+  }
+ion-tab-bar {
+    bottom: 0;
+    position: relative;
+    border-radius: 20px 20px 0px 0px;
+    width: 100%;
+    margin: 0 auto;
+    --background:#0024B1;
+    --background-focused-opacity:.9;
+  }
+  
+  ion-tab-button {
+    --color: var(#FFFFFF);
+    --color-selected: var(#FFCA00);
+    --color-focused: var(#FFCA00);
+  
+    &::before {
+      background-color: transparent;
+      display: block;
+      content: "";
+      margin: 0 auto;
+      width: 20px;
+      height: 2px;
+    }
+  
+    &.tab-selected::before {
+      background-color: var(--ion-color-primary);
+    }
+  }
